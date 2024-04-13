@@ -1,5 +1,5 @@
 import React from 'react';
-import Pessoa from '../../pages/dashboard/img/people.png'
+import Pessoa from '../../assets/people.png'
 
 const Main = () => {
     return (

@@ -1,5 +1,5 @@
-import styles from './login.module.css';
-import Detalhe from './img/Detalhe.svg'
+import styles from '../../styles/login.module.css';
+import Detalhe from '../../assets/Detalhe.svg'
 import Botao from '../../components/Botao/botao';
 import Menulogin from '../../components/Login/menuLogin';
 import {useNavigate} from "react-router-dom"
@@ -12,12 +12,11 @@ function Login() {
     }
 
     return(
-        <div className={styles.contener}>
-            <div className={styles.blocoImfo}>
-                <div className={styles.imfo}>
+        <div className={styles.container}>
+            <div className={styles.blocoInfo}>
+                <div className={styles.info}>
                     <div>
-                        <h1>Cadastro aqui</h1>
-                        <p>Caso vc ainda não seja cadastrdo</p>
+                        <h1>Cadastre-se aqui!</h1>
                         <Botao nome = "Cadastro" onClick={handleCadastroClick} />
                     </div>
                 </div>

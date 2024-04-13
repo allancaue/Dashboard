@@ -1,5 +1,5 @@
 import Botao from "../Botao/botao";
-import styles from './menuLogin.module.css'
+import styles from '../../styles/menuLogin.module.css'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from "../../Js/funcoes";
 import { useState } from "react";
@@ -29,18 +29,18 @@ function Menulogin(){
     }
 
     return(
-        <div className={styles.contener}>
+        <div className={styles.container}>
             <div>
                 <h2>Olá Novamente!</h2>
                 <p>Seja bem vindo</p>
             </div>
             <div class="form-floating mb-3">
                 <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" onChange={(e) => setEmail(e.target.value)}/>
-                <label for="floatingInput">Email address</label>
+                <label for="floatingInput">Email</label>
             </div>
             <div class="form-floating mb-3">
                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
-                <label for="floatingPassword">Password</label>
+                <label for="floatingPassword">Senha</label>
             </div>
             <Botao nome="Login" onClick={handleSignIn}/>
         </div>

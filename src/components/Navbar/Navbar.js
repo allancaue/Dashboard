@@ -3,7 +3,7 @@ import { IoMenu } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 import { getSidebarElement } from '../Sidebar/Sidebar';
 import { useState } from 'react';
-import Pessoa from '../../pages/dashboard/img/people.png'
+import Pessoa from '../../assets/people.png'
 
 
 const Navbar = () => {
