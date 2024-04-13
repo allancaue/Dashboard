@@ -45,7 +45,7 @@ function MenuCadastro() {
     }
 
     return (
-        <div className={styles.contener}>
+        <div className={styles.container}>
             <div>
                 <h2>Olá!</h2>
                 <p>Seja bem-vindo</p>

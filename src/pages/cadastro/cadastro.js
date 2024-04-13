@@ -15,7 +15,7 @@ function Cadastro() {
     return(
         <div className={styles.container}>
             <div className={styles.blocoInfo}>
-                <div className={styles.imfo}>
+                <div className={styles.info}>
                     <div>
                         <h1>Já tem uma conta?</h1>
                         <p>Entre aqui!</p>
