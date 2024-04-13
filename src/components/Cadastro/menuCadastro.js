@@ -1,6 +1,6 @@
 import styles from "./menuCadastro.module.css";
 import Botao from "../Botao/botao";
-import { auth, database} from "../../Js/fumcoes";
+import { auth, database} from "../../Js/funcoes";
 import { useState } from "react";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { collection, addDoc } from "firebase/firestore"; 

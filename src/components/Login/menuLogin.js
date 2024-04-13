@@ -1,7 +1,7 @@
 import Botao from "../Botao/botao";
 import styles from './menuLogin.module.css'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { auth } from "../../Js/fumcoes";
+import { auth } from "../../Js/funcoes";
 import { useState } from "react";
 
 function Menulogin(){
