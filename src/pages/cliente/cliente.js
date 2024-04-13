@@ -1,7 +1,7 @@
 import React from 'react';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Navbar from '../../components/Navbar/Navbar';
-import Main from '../../components/Main/Main';
+import Cliente from '../../components/Cliente/Cliente';
 import '../../styles/dashboard.css';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <Sidebar />
       <div className="content">
         <Navbar />
-        <Main />
+        <Cliente />
       </div>
     </div>
   );
