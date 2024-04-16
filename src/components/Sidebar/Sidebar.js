@@ -1,38 +1,54 @@
 import React, { useState } from 'react';
+import { MdDashboard } from "react-icons/md";
+import { RiGroupFill } from "react-icons/ri";
+import { BiSupport } from "react-icons/bi";
+import { MdChat } from "react-icons/md";
+import { GrSystem } from "react-icons/gr";
+import { IoSettings } from "react-icons/io5";
+import { CiLogout } from "react-icons/ci";
+import Logo from '../../assets/logo.png'
+
 
 const Sidebar = () => {
-    const [activeItem, setActiveItem] = useState(0); // Inicialmente nenhum item está ativo
+    const [activeItem, setActiveItem, setClickedIcon] = useState(0); // Inicialmente nenhum item está ativo
 
-    const handleItemClick = (index) => {
+    const handleItemClick = (index, icon) => {
         setActiveItem(index);
     };
 
     return (
         <section id="sidebar" className='sidebar'>
             <a href="#" className="brand">
-                <i className='bx bxs-smile'></i>
-                <span className="text">Orbita</span>
+                <img src={Logo} alt="logo" />
+                <span className="text">LicenseLab</span>
             </a>
             <ul className="side-menu top">
-                {['Dashboard', 'Meus Clientes', 'Tickets', 'Mensagens', 'Softwares'].map((menuItem, index) => (
+                {[
+                    { label: 'Dashboard', icon: <MdDashboard /> },
+                    { label: 'Meus Clientes', icon: <RiGroupFill />                },
+                    { label: 'Tickets', icon: <BiSupport />                },
+                    { label: 'Mensagens', icon: <MdChat />                },
+                    { label: 'Softwares', icon: <GrSystem />                }
+                ].map((menuItem, index) => (
                     <li key={index} className={index === activeItem ? 'active' : ''}>
-                        <a href="#" onClick={() => handleItemClick(index)}>
-                            <i className={`bx bxs-${menuItem.toLowerCase().replace(/\s/g, '-')}`}></i>
-                            <span className="text">{menuItem}</span>
+                        <a href="#" onClick={() => handleItemClick(index, menuItem.icon)}>
+                            {menuItem.icon && menuItem.icon} {/* Renderiza o ícone se estiver disponível */}
+                            <span className="text">{menuItem.label}</span>
                         </a>
                     </li>
                 ))}
             </ul>
+
             <ul className="side-menu">
                 <li>
                     <a href="#">
-                        <i className='bx bxs-cog' ></i>
+                        <IoSettings />
                         <span className="text">Configurações</span>
                     </a>
                 </li>
                 <li>
                     <a href="#" className="logout">
-                        <i className='bx bxs-log-out-circle' ></i>
+                        <CiLogout />
                         <span className="text">Sair</span>
                     </a>
                 </li>

@@ -1,5 +1,10 @@
 import React from 'react';
 import Pessoa from '../../assets/people.png'
+import { FaCalendarCheck } from "react-icons/fa";
+import { FaUserGroup } from "react-icons/fa6";
+import { AiFillDollarCircle } from "react-icons/ai";
+import { BsThreeDotsVertical } from "react-icons/bs";
+import { FaCloudDownloadAlt } from "react-icons/fa";
 
 const Main = () => {
     return (
@@ -18,30 +23,31 @@ const Main = () => {
             </ul>
         </div>
         <a href="#" className="btn-download">
-            <i className='bx bxs-cloud-download' ></i>
+            <FaCloudDownloadAlt />
             <span className="text">Baixar PDF</span>
         </a>
     </div>
 
     <div className="box-info">
         <div className="info-item">
-            <i className='bx bxs-calendar-check' ></i>
+
+        <FaCalendarCheck />
             <div className="text">
                 <h3>1020</h3>
                 <p>Novos Pedidos</p>
             </div>
         </div>
         <div className="info-item">
-            <i className='bx bxs-group' ></i>
+        <FaUserGroup />
             <div className="text">
                 <h3>2834</h3>
                 <p>Licenças vendidas</p>
             </div>
         </div>
         <div className="info-item">
-            <i className='bx bxs-dollar-circle' ></i>
+            <AiFillDollarCircle />
             <div className="text">
-                <h3>R$2.543,00</h3>
+                <h3>R$21.543,00</h3>
                 <p>Vendas Totais</p>
             </div>
         </div>
@@ -83,9 +89,14 @@ const Main = () => {
             <ul className="todo-list">
                 <li className="completed">
                     <p>Tarefa 1</p>
-                    <i className='bx bx-dots-vertical-rounded' ></i>
+                    <BsThreeDotsVertical />
                 </li>
-                {/* Outras tarefas aqui */}
+            </ul>
+            <ul className="todo-list">
+                <li className="not-completed">
+                    <p>Tarefa 2</p>
+                    <BsThreeDotsVertical />
+                </li>
             </ul>
         </div>
     </div>
