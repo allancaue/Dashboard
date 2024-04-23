@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from '../../components/Sidebar/Sidebar';
+import Sidebar from '../../components/Sidebar/Softwares';
 import Navbar from '../../components/Navbar/Navbar';
 import Softwares from '../../components/Softwares/Softwares';
 import '../../styles/softwares.css';

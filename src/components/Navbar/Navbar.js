@@ -50,7 +50,6 @@ const Navbar = () => {
     return (
         <nav>
             <IoMenu onClick={toggleSidebar} />
-            <a href="#" className="nav-link">Categorias</a>
             <button onClick={toggleSearchForm} className="nav-icon"></button>
             <form action="#" className={searchFormClassName}>
                 <div className="form-input">
@@ -58,15 +57,18 @@ const Navbar = () => {
                     <button type="submit" className="search-btn"><FaSearch /></button>
                 </div>
             </form>
-            <input type="checkbox" id="switch-mode" hidden onClick={toggleDarkMode} />
-            <label htmlFor="switch-mode" className="switch-mode"></label>
-            <a href="#" className="notification">
-                <IoIosNotifications />
-                <span className="num">8</span>
-            </a>
-            <a href="#" className="profile">
-                <img src={Pessoa} alt="Profile" />
-            </a>
+            <div className='finalnav'>
+                <input type="checkbox" id="switch-mode" hidden onClick={toggleDarkMode} />
+                <label htmlFor="switch-mode" className="switch-mode"></label>
+                <a href="#" className="notification">
+                    <IoIosNotifications />
+                    <span className="num">8</span>
+                </a>
+                <a href="" className="profile">
+                    <img src={Pessoa} alt="Profile" />
+                </a>
+            </div>
+
         </nav>
     );
 };

@@ -7,7 +7,7 @@ import { CiLogout } from "react-icons/ci";
 import Logo from '../../assets/logo.png'
 
 const Sidebar = () => {
-    const [activeItem, setActiveItem] = useState(0);
+    const [activeItem, setActiveItem] = useState(2);
 
     const handleItemClick = (index, icon) => {
         setActiveItem(index);
@@ -21,16 +21,16 @@ const Sidebar = () => {
             </a>
             <ul className="side-menu top">
                 {[
-                    { label: 'Dashboard', icon: <MdDashboard />, path: '/dashboard' }, 
-                    { label: 'Meus Clientes', icon: <RiGroupFill />, path: '/cliente' }, 
-                    { label: 'Softwares', icon: <GrSystem />, path: '/softwares' } 
+                    { label: 'Dashboard', icon: <MdDashboard />, path: '/dashboard' }, // Rota para a página inicial
+                    { label: 'Meus Clientes', icon: <RiGroupFill />, path: '/cliente' }, // Rota para a página de clientes
+                    { label: 'Softwares', icon: <GrSystem />, path: '/softwares' } // Rota para a página de softwares
                 ].map((menuItem, index) => (
                     <li key={index} className={index === activeItem ? 'active' : ''}>
                         <Link
                             to={menuItem.path}
                             onClick={() => handleItemClick(index, menuItem.icon)}
                         >
-                            {menuItem.icon && menuItem.icon}
+                            {menuItem.icon && menuItem.icon} {/* Renderiza o ícone se estiver disponível */}
                             <span className="text">{menuItem.label}</span>
                         </Link>
                     </li>

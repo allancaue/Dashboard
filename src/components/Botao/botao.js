@@ -1,6 +1,6 @@
 function Botao({nome, onClick}) {
     return(
-        <button type="button" class="btn btn-primary btn-lg" onClick={onClick}>{nome}</button>
+        <button type="button" class="btn btn-dark" onClick={onClick}>{nome}</button>
     );
 }
 

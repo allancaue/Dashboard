@@ -6,25 +6,24 @@
 }
 
 .blocoInfo {
-    width: 60%;
-    background-image: linear-gradient(rgba(5, 117, 230, 1),rgba(2, 41, 138, 1),rgba(2, 27, 121, 1));
+    width: 70%;
+    background-image: linear-gradient(#0d1e2e,#050419,rgb(6, 10, 24));
     display: flex;
-    flex-direction: column;
-    justify-content: end;
+    border-bottom-right-radius: 150px;
+    border-top-right-radius: 150px;
 }
 
-.imagemDetalhe img {
-    width: 45%;
+img {
+    width: 500px;
+    margin-left: 100px;
 }
 
 .info {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 50%;
 }
 
-.info h1{
+h1{
     color: white;
     font-family: "Poppins", sans-serif;
     font-weight: 700;

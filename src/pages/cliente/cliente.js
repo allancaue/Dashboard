@@ -1,8 +1,9 @@
 import React from 'react';
-import Sidebar from '../../components/Sidebar/Sidebar';
+import Sidebar from '../../components/Sidebar/Cliente';
 import Navbar from '../../components/Navbar/Navbar';
 import Cliente from '../../components/Cliente/Cliente';
 import '../../styles/dashboard.css';
+
 
 function App() {
   return (
@@ -15,6 +16,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
