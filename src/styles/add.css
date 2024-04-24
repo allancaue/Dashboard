@@ -12,6 +12,7 @@
 
 .form {
     width: 50%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -108,6 +109,7 @@
     justify-content: space-between;
     margin-top: 0.62rem;
     padding: 0 .5rem;
+    gap: 20px;
 }
 
 .cnpjinput {
@@ -123,19 +125,15 @@
     font-size: 0.81rem;
     font-weight: 600;
     color: #000000c0;
-}
+}   
 
-.botoes {
-    gap: 20px;
-    margin: 20px;
-    max-width: 100%;
+.continuebutton {
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
 .continuebutton button {
-    width: 100%;
+    width: 70%;
     border: none;
     background-color: #6c63ff;
     padding: 0.62rem;
@@ -154,28 +152,6 @@
     font-size: 0.93rem;
     font-weight: 500;
     color: #fff;
-}
-
-.cancellbutton button {
-    width: 100%;
-    border: none;
-    background-color: #f8d3d3;
-    padding: 0.62rem;
-    border-radius: 5px;
-    cursor: pointer;
-    border: 1px solid red;
-}
-
-.cancellbutton button:hover {
-    background-color: #ff7c7cf1;
-    transition: all ease 0.4s;
-}
-
-.cancellbutton button {
-    text-decoration: none;
-    font-size: 0.93rem;
-    font-weight: 500;
-    color: #ff0000;
 }
 
 @media screen and (max-width: 1330px) {

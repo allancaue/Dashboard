@@ -3,10 +3,80 @@ import Pessoa from '../../assets/people.png';
 import { FaPlus } from "react-icons/fa";
 import { IoFilter } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
+import { IoMdClose } from "react-icons/io";
 import '../../styles/add.css'
 
 const Cliente = () => {
     const [showPopup, setShowPopup] = useState(false);
+    const [cnpj, setCnpj] = useState('');
+    const [razaoSocial, setRazaoSocial] = useState('');
+    const [nomeFantasia, setNomeFantasia] = useState('');
+    const [endereco, setEndereco] = useState('');
+    const [nomeContato, setNomeContato] = useState('');
+    const [tipoCnpj, setTipoCnpj] = useState('');
+    const [municipio, setMunicipio] = useState('');
+    const [uf, setUf] = useState('');
+    const [telefone, setTelefone] = useState('');
+    const [bairro, setBairro] = useState('');
+    const [logradouro, setLogradouro] = useState('');
+
+    const handlePesquisarClick = async () => {
+        if (cnpj.length === 14) {
+            try {
+                const response = await fetch(`http://localhost:3001/api/cnpj/${cnpj}`);
+                const data = await response.json();
+
+                if (data.status === 'OK') {
+                    setRazaoSocial(data.nome);
+                    setNomeFantasia(data.fantasia);
+                    setMunicipio(data.municipio);
+                    setUf(data.uf);
+                    setTelefone(data.tel);
+                    setBairro(data.bairro);
+                    setLogradouro(data.setLogradouro);
+                } else {
+                    alert(data.message);
+                }
+            } catch (error) {
+                console.error('Erro ao buscar dados:', error);
+                alert('Erro ao buscar dados');
+            }
+        } else {
+            alert('CNPJ inválido');
+        }
+    };
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Aqui você pode fazer o que precisar com os dados do formulário, como enviar para o servidor
+        // Por exemplo, você pode enviar uma requisição POST com os dados do formulário para adicionar o cliente ao sistema
+        console.log('Dados do formulário:', {
+            cnpj,
+            razaoSocial,
+            nomeFantasia,
+            endereco,
+            nomeContato,
+            tipoCnpj,
+            municipio,
+            uf,
+            telefone,
+            bairro,
+            logradouro
+        });
+        // Resetar os campos após o envio, se necessário
+        setCnpj('');
+        setRazaoSocial('');
+        setNomeFantasia('');
+        setEndereco('');
+        setNomeContato('');
+        setTipoCnpj('');
+        setMunicipio('');
+        setUf('');
+        setTelefone('');
+        setBairro('');
+        setLogradouro('');
+    };
 
     return (
         <main>
@@ -59,87 +129,134 @@ const Cliente = () => {
             {showPopup && (
                 <div className='popup'>
                     <div className="form">
-                        <form action="#">
+                        <form onSubmit={handleSubmit}>
                             <div className="formheader">
                                 <div className="title">
                                     <h2>Dados do cliente</h2>
                                 </div>
+                                <IoMdClose onClick={() => setShowPopup(false)} />
                             </div>
 
                             <div className="inputgroup">
                                 <div className="inputbox">
                                     <label htmlFor="cnpj">CNPJ</label>
-                                    <input id="cnpj" type="text" name="cnpj" placeholder="Digite o CNPJ" required />
+                                    <input
+                                        id="cnpj"
+                                        type="text"
+                                        name="cnpj"
+                                        placeholder="Digite o CNPJ"
+                                        required
+                                        value={cnpj}
+                                        onChange={(e) => setCnpj(e.target.value)}
+                                    />
+                                    <button
+                                        id="pesquisar"
+                                        type="button"
+                                        name="pesquisar"
+                                        onClick={handlePesquisarClick}
+                                    >
+                                        Pesquisar
+                                    </button>
                                 </div>
 
                                 <div className="inputbox">
-                                    <label htmlFor="endereco">Endereco</label>
-                                    <input id="endereco" type="text" name="endereco" placeholder="Digite o endereço" required />
+                                    <label htmlFor="endereco">Endereço</label>
+                                    <input
+                                        id="endereco"
+                                        type="text"
+                                        name="endereco"
+                                        placeholder="Digite o endereço"
+                                        required
+                                        value={endereco}
+                                        onChange={(e) => setEndereco(e.target.value)}
+                                    />
                                 </div>
 
                                 <div className="inputbox">
-                                    <label htmlFor="nomedaempresa">Nome da Empresa</label>
-                                    <input id="nomedaempresa" type="text" name="nomedaempresa" placeholder="Digite o nome da empresa" required />
+                                    <label htmlFor="razao">Razão Social</label>
+                                    <input
+                                        id="razao"
+                                        type="text"
+                                        name="razao"
+                                        placeholder="Digite a razão social"
+                                        required
+                                        value={razaoSocial}
+                                        onChange={(e) => setRazaoSocial(e.target.value)}
+                                    />
                                 </div>
 
                                 <div className="inputbox">
-                                    <label htmlFor="email">E-mail</label>
-                                    <input id="email" type="email" name="email" placeholder="Digite o e-mail" required />
+                                    <label htmlFor="nome">Nome Fantasia</label>
+                                    <input
+                                        id="nome"
+                                        type="text"
+                                        name="nome"
+                                        placeholder="Digite o nome fantasia"
+                                        required
+                                        value={nomeFantasia}
+                                        onChange={(e) => setNomeFantasia(e.target.value)}
+                                    />
                                 </div>
 
                                 <div className="inputbox">
-                                    <label htmlFor="numero">Celular</label>
-                                    <input id="numero" type="tel" name="numero" placeholder="(xx) xxxx-xxxx" required />
+                                    <label htmlFor="nomecontato">Nome do Contato</label>
+                                    <input
+                                        id="nomecontato"
+                                        type="text"
+                                        name="nomecontato"
+                                        placeholder="Digite o nome do contato"
+                                        required
+                                        value={nomeContato}
+                                        onChange={(e) => setNomeContato(e.target.value)}
+                                    />
                                 </div>
 
-                                <div className="inputbox">
-                                    <label htmlFor="nomecontato">Nome do contato</label>
-                                    <input id="nomecontato" type="text" name="nomecontato" placeholder="Digite o nome" required />
-                                </div>
+                                <div className="cnpjinputs">
+                                    <div className="cnpjtitle">
+                                        <h6>Tipo de CNPJ</h6>
+                                    </div>
 
+                                    <div className="cnpjgroup">
+                                        <div className="cnpjinput">
+                                            <input
+                                                id="slu"
+                                                type="radio"
+                                                name="tipoCnpj"
+                                                value="SLU"
+                                                checked={tipoCnpj === 'SLU'}
+                                                onChange={(e) => setTipoCnpj(e.target.value)}
+                                            />
+                                            <label htmlFor="slu">SLU</label>
+                                        </div>
+
+                                        <div className="cnpjinput">
+                                            <input
+                                                id="ei"
+                                                type="radio"
+                                                name="tipoCnpj"
+                                                value="EI"
+                                                checked={tipoCnpj === 'EI'}
+                                                onChange={(e) => setTipoCnpj(e.target.value)}
+                                            />
+                                            <label htmlFor="ei">EI</label>
+                                        </div>
+
+                                        <div className="cnpjinput">
+                                            <input
+                                                id="mei"
+                                                type="radio"
+                                                name="tipoCnpj"
+                                                value="MEI"
+                                                checked={tipoCnpj === 'MEI'}
+                                                onChange={(e) => setTipoCnpj(e.target.value)}
+                                            />
+                                            <label htmlFor="mei">MEI</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div className="cnpjinputs">
-                                <div className="cnpjtitle">
-                                    <h6>Tipo de CNPJ</h6>
-                                </div>
-
-                                <div className="cnpjgroup">
-                                    <div className="cnpjinput">
-                                        <input id="slu" type="radio" name="cnpj" />
-                                        <label htmlFor="slu">SLU</label>
-                                    </div>
-
-                                    <div className="cnpjinput">
-                                        <input id="ei" type="radio" name="cnpj" />
-                                        <label htmlFor="ei">EI</label>
-                                    </div>
-
-                                    <div className="cnpjinput">
-                                        <input id="ltda" type="radio" name="cnpj" />
-                                        <label htmlFor="ltda">Ltda</label>
-                                    </div>
-
-                                    <div className="cnpjinput">
-                                        <input id="mei" type="radio" name="cnpj" />
-                                        <label htmlFor="mei">MEI</label>
-                                    </div>
-
-                                    <div className="cnpjinput">
-                                        <input id="me" type="radio" name="cnpj" />
-                                        <label htmlFor="me">ME</label>
-                                    </div>
-
-                                    <div className="cnpjinput">
-                                        <input id="sa" type="radio" name="cnpj" />
-                                        <label htmlFor="sa">SA</label>
-                                    </div>
-                                </div>
-                            </div>
                             <div className='botoes'>
-                                <div className="cancellbutton">
-                                    <button onClick={() => setShowPopup(false)}>Cancelar</button>
-                                </div>
                                 <div className="continuebutton">
                                     <button type='submit'>Adicionar</button>
                                 </div>
