@@ -230,7 +230,8 @@ body {
 .content nav form {
 	max-width: 400px;
 	width: 100%;
-	margin-right: auto;
+	display: flex;
+	align-items: center;
 }
 .content nav form .form-input {
 	display: flex;
@@ -288,7 +289,9 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-
+.content nav a {
+	width: auto;
+}
 .content nav .profile img {
 	width: 36px;
 	height: 36px;
