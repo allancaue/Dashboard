@@ -1,6 +1,6 @@
 import styles from "../../styles/menuCadastro.module.css";
 import Botao from "../Botao/botao";
-import { auth, database} from "../../Js/funcoes";
+import { auth, firestore} from "../../Js/funcoes";
 import { useState } from "react";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { collection, addDoc } from "firebase/firestore"; 
@@ -24,7 +24,7 @@ function MenuCadastro() {
     async function handleSignUp(e) {
         e.preventDefault();
         CreateUserWithEmailAndPassword(email, password);
-        const docRef = await addDoc(collection(database, "users"), {
+        const docRef = await addDoc(collection(firestore, "users"), {
             email: {email},
             username: {username},
             cpf: {cpf},

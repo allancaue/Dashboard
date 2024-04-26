@@ -6,6 +6,7 @@ import { CiSearch } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import '../../styles/add.css'
 import { firestore } from '../../Js/funcoes'
+import { collection, addDoc } from "firebase/firestore"; 
 
 const Cliente = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -48,8 +49,7 @@ const Cliente = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const db = firestore(); // Acessando a instância do Firestore
-            await db.collection('clientes').add({
+            const docRef = await addDoc(collection(firestore, "clientes"),{
                 cnpj,
                 razaoSocial,
                 nomeFantasia,
