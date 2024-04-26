@@ -23,7 +23,7 @@ const Cliente = () => {
     const handlePesquisarClick = async () => {
         if (cnpj.length === 14) {
             try {
-                const response = await fetch(`http://localhost:3001/api/cnpj/${cnpj}`);
+                const response = await fetch(`https://license-lab.onrender.com/api/cnpj/${cnpj}`);
                 const data = await response.json();
 
                 if (data.status === 'OK') {
