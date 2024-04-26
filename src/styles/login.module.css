@@ -43,3 +43,42 @@ h1{
     justify-content: center;
     width: 40%;
 }
+
+@media screen and (max-width: 976px) {
+    img {
+        margin: 0;
+        width: 300px;   
+    }
+
+    .blocoInfo {
+        width: 50%;
+    }
+
+    .blocoLogin {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    img {
+        margin-left: 0px;
+        width: 200px;
+    }
+
+    .blocoInfo {
+        width: 100%;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        justify-content: center;
+    }
+
+    .blocoLogin {
+        margin-top: 40px;
+        width: 100%;
+    }
+}

@@ -12,8 +12,8 @@ function App() {
     <BrowserRouter>
       <Fragment>
           <Routes>
-              <Route path="/" element={<Login />} />
-              <Route path="/Dashboard" element={<Dashboard />} />
+              <Route path="" element={<Login />} />
+              <Route path="/Painel" element={<Dashboard />} />
               <Route path="/Cliente" element={<Cliente />} />
               <Route path="/Tickets" element={<Tickets />} />
               <Route path="/Softwares" element={<Softwares />} />

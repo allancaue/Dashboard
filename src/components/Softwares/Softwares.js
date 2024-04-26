@@ -3,7 +3,7 @@ import Pessoa from '../../assets/people.png'
 import { FaPlus } from "react-icons/fa";
 import { IoFilter } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
-import '../../styles/addlice.css'
+import '../../styles/add.css'
 
 
 const Softwares = () => {

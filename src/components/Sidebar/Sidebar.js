@@ -21,7 +21,7 @@ const Sidebar = () => {
             </a>
             <ul className="side-menu top">
                 {[
-                    { label: 'Dashboard', icon: <MdDashboard />, path: '/dashboard' }, 
+                    { label: 'Dashboard', icon: <MdDashboard />, path: '/painel' }, 
                     { label: 'Meus Clientes', icon: <RiGroupFill />, path: '/cliente' }, 
                     { label: 'Softwares', icon: <GrSystem />, path: '/softwares' } 
                 ].map((menuItem, index) => (
