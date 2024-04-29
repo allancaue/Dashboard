@@ -541,9 +541,12 @@ main .popup {
 .content main .table-data .todo .todo-list li:last-child {
 	margin-bottom: 0;
 }
+
+.chart-container {
+	margin-bottom: 30px;
+}
 /* MAIN */
 /* CONTENT */
-
 
 @media screen and (max-width: 768px) {
 	.sidebar {
@@ -558,6 +561,14 @@ main .popup {
 	.content nav .nav-link {
 		display: none;
 	}
+	.chart-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-content: flex-start;
+		margin-left: 30px;
+	}
+	
 }
 
 

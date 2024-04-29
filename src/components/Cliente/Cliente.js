@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Pessoa from '../../assets/people.png';
 import { FaPlus } from "react-icons/fa";
 import { IoFilter } from "react-icons/io5";
@@ -6,7 +6,8 @@ import { CiSearch } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import '../../styles/add.css'
 import { firestore } from '../../Js/funcoes'
-import { collection, addDoc } from "firebase/firestore"; 
+import { collection, addDoc, getDocs } from "firebase/firestore"; 
+import InputMask from 'react-input-mask';
 
 const Cliente = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -19,6 +20,7 @@ const Cliente = () => {
     const [uf, setUf] = useState('');
     const [telefone, setTelefone] = useState('');
     const [bairro, setBairro] = useState('');
+    const [clientes, setClientes] = useState([]);
 
     const handlePesquisarClick = async () => {
         if (cnpj.length === 14) {
@@ -31,8 +33,9 @@ const Cliente = () => {
                     setNomeFantasia(data.fantasia);
                     setMunicipio(data.municipio);
                     setUf(data.uf);
-                    setTelefone(data.tel);
+                    setTelefone(data.telefone);
                     setBairro(data.bairro);
+                    setEndereco(data.logradouro);
                 } else {
                     alert(data.message);
                 }
@@ -60,7 +63,6 @@ const Cliente = () => {
                 telefone,
                 bairro
             });
-            // Resetar os campos após o envio, se necessário
             setCnpj('');
             setRazaoSocial('');
             setNomeFantasia('');
@@ -75,6 +77,36 @@ const Cliente = () => {
             alert('Erro ao adicionar cliente');
         }
     };
+
+    useEffect(() => {
+        const fetchClientes = async () => {
+            try {
+                const querySnapshot = await getDocs(collection(firestore, 'clientes'));
+                const clientesData = [];
+                querySnapshot.forEach((doc) => {
+                    clientesData.push({ id: doc.id, ...doc.data() });
+                });
+                setClientes(clientesData);
+            } catch (error) {
+                console.error('Erro ao obter clientes:', error);
+            }
+        };
+
+        fetchClientes();
+    }, []);
+
+    const renderClientes = () => {
+        return clientes.map((cliente) => (
+            <tr key={cliente.id}>
+                <td>
+                    <p>{cliente.razaoSocial}</p>
+                </td>
+                <td>{cliente.cnpj}</td>
+                <td><span className="status completed">Ativo</span></td>
+            </tr>
+        ));
+    };
+    
 
     return (
         <main>
@@ -106,20 +138,13 @@ const Cliente = () => {
                     <table>
                         <thead>
                             <tr>
-                                <th>Usuário</th>
-                                <th>Data de expiração</th>
+                                <th>Razão social</th>
+                                <th>CNPJ</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <img src={Pessoa} alt="Usuário" />
-                                    <p>João Silva</p>
-                                </td>
-                                <td>01-10-2024</td>
-                                <td><span className="status completed">Concluído</span></td>
-                            </tr>
+                            {renderClientes()}
                         </tbody>
                     </table>
                 </div>
@@ -138,9 +163,10 @@ const Cliente = () => {
                             <div className="inputgroup">
                                 <div className="inputbox">
                                     <label htmlFor="cnpj">CNPJ</label>
-                                    <input
+                                    <InputMask
                                         id="cnpj"
                                         type="text"
+                                        mask="99.999.999/9999-99"
                                         name="cnpj"
                                         placeholder="Digite o CNPJ"
                                         required

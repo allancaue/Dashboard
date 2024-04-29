@@ -5,7 +5,7 @@ import { FaUserGroup } from "react-icons/fa6";
 import { AiFillDollarCircle } from "react-icons/ai";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaCloudDownloadAlt } from "react-icons/fa";
-import BarAndDoughnutChart from '../../pages/grafico/charts';
+import BarAndDoughnutChart from '../../components/Grafico/charts';
 
 const Main = () => {
     return (
@@ -30,26 +30,8 @@ const Main = () => {
             </div>
 
             <div className="box-info">
-                <div className="info-item">
-                    <FaCalendarCheck />
-                    <div className="text">
-                        <h3>1020</h3>
-                        <p>Novos Pedidos</p>
-                    </div>
-                </div>
-                <div className="info-item">
-                    <FaUserGroup />
-                    <div className="text">
-                        <h3>2834</h3>
-                        <p>Licenças vendidas</p>
-                    </div>
-                </div>
-                <div className="info-item">
-                    <AiFillDollarCircle />
-                    <div className="text">
-                        <h3>R$21.543,00</h3>
-                        <p>Vendas Totais</p>
-                    </div>
+                <div className="charts">
+                    <BarAndDoughnutChart />
                 </div>
             </div>
 
@@ -101,10 +83,6 @@ const Main = () => {
                 </div>
             </div>
 
-            {/* Adicione o componente do gráfico aqui */}
-            <div className="charts">
-                <BarAndDoughnutChart />
-            </div>
         </main>
     );
 }
