@@ -3,6 +3,7 @@ import styles from '../../styles/menuLogin.module.css'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from "../../Js/funcoes";
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 function Menulogin(){
 
@@ -14,10 +15,15 @@ function Menulogin(){
     loading,
     error,
     ] = useSignInWithEmailAndPassword(auth);
+    const navigate = useNavigate(); 
 
     function handleSignIn(e) {
         e.preventDefault();
-        signInWithEmailAndPassword(email, password);
+        signInWithEmailAndPassword(email, password)
+            .then(() => navigate('/Painel'))
+            .catch((error) => {
+                console.error(error);
+            });
     }
 
     if (loading) {

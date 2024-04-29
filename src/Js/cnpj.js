@@ -1,6 +1,10 @@
 document.getElementById('pesquisar').addEventListener('click', function(e) {
   e.preventDefault();
-  
+  app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+ })
   // Aqui recuperamos o cnpj preenchido do campo e usamos uma expressão regular para limpar da string tudo aquilo que for diferente de números
   var cnpj = document.getElementById('cnpj').value.replace(/[^0-9]/g, '');
 
