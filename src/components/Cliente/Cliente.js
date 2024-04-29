@@ -7,7 +7,7 @@ import { IoMdClose } from "react-icons/io";
 import '../../styles/add.css'
 import { firestore } from '../../Js/funcoes'
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
-import InputMask from 'react-input-mask';
+
 
 const Cliente = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -163,10 +163,9 @@ const Cliente = () => {
                             <div className="inputgroup">
                                 <div className="inputbox">
                                     <label htmlFor="cnpj">CNPJ</label>
-                                    <InputMask
+                                    <input
                                         id="cnpj"
                                         type="text"
-                                        mask="99.999.999/9999-99"
                                         name="cnpj"
                                         placeholder="Digite o CNPJ"
                                         required
