@@ -1,70 +1,86 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# License Lab
 
-## Available Scripts
+Sistema desenvolvido com o auxilio da professora **Thayane Santana** durante as aulas de Desenvolvimento Web com o intuito de gerenciar clientes e suas respectivas licenças.
 
-In the project directory, you can run:
 
-### `npm start`
+![Logo](https://github.com/allancaue/Dashboard/blob/main/src/assets/1.png?raw=true)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Funcionalidades
 
-### `npm test`
+- Temas dark e light
+- Dados em tempo real
+- Multiplataforma
+- Gerenciamento de clientes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Stack utilizada
 
-### `npm run build`
+**Front-end:** React, Bootstrap
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Back-end:** Node, Express
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Estrutura do projeto
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `./App.js`: É a página que o React usa para montar o sistema de roteamento
+- `./src/components`: São todos os pedaços primordiais de interface
 
-### `npm run eject`
+- `./src/pages`: Cada arquivo .js em `pages` representa uma tela do projeto, uma tela caso tenha componentes específicos inicialmente deve ter os mesmos guardados na sua própria pasta, repetindo a estrutura anterior do projeto e evitando o reuso antes do uso de fato.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Como me localizar no projeto?
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Todas as páginas do projeto estão listadas em `./pages`
+  - Todos os `componentes` que representam as páginas estão em `./src/components`
+    - Uma vez dentro de uma página você pode ir navegando pelos componentes para ir se encontrando e fazer a alteração que deseja
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Todos os tipos de midias utilizadas estão em `./src/assets`
+- Todos os scripts usados estão em `./src/Js`
+- Todos os arquivos CSS estão em `./src/styles`
+## Rodando localmente
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Clone o projeto
 
-## Learn More
+```bash
+  git clone https://github.com/allancaue/Dashboard
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Entre no diretório do projeto
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+  cd my-project
+```
 
-### Code Splitting
+Instale as dependências
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+  npm install
+```
 
-### Analyzing the Bundle Size
+Inicie o servidor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+  npm start
+```
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Autores
 
-### Advanced Configuration
+- [Davi Borges](https://github.com/dborgessdev)
+- [Daniel Vidal](https://github.com/vidalxv)
+- [Allan Cauê](https://github.com/allancaue)
+- [José Vitor](https://github.com/vitorallves1)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Referência
 
-### `npm run build` fails to minify
+ - [API RECEITA WS](https://api-cnpj.onrender.com/)  ( mais informações em: [github.com/vidalxv/api-cnpj](https://github.com/vidalxv/api-cnpj) )
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ - [API CLIENTES](https://api-ityw.onrender.com/)
+
+---
+
+
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/) [![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
+
