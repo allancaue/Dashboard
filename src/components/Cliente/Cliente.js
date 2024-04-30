@@ -72,6 +72,7 @@ const Cliente = () => {
             setUf('');
             setTelefone('');
             setBairro('');
+            setShowPopup(false);
         } catch (error) {
             console.error('Erro ao adicionar cliente: ', error);
             alert('Erro ao adicionar cliente');

@@ -5,6 +5,7 @@ import Cliente from './pages/cliente/cliente'
 import Tickets from './pages/tickets/tickets'
 import Softwares from './pages/softwares/softwares'
 import Dashboard from './pages/dashboard/dashboard'
+import Sistemas from './pages/sistemas/sistemas'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
               <Route path="/Cliente" element={<Cliente />} />
               <Route path="/Tickets" element={<Tickets />} />
               <Route path="/Softwares" element={<Softwares />} />
+              <Route path="/Sistemas" element={<Sistemas />} />
               <Route path="*" element={<Navigate to="/" />} />
           </Routes>
       </Fragment>

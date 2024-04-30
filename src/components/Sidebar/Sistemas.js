@@ -9,7 +9,7 @@ import { SiSystem76 } from "react-icons/si";
 
 
 const Sidebar = () => {
-    const [activeItem, setActiveItem] = useState(2);
+    const [activeItem, setActiveItem] = useState(3);
 
     const handleItemClick = (index, icon) => {
         setActiveItem(index);
@@ -23,8 +23,8 @@ const Sidebar = () => {
             </a>
             <ul className="side-menu top">
                 {[
-                    { label: 'Dashboard', icon: <MdDashboard />, path: '/painel' },
-                    { label: 'Meus Clientes', icon: <RiGroupFill />, path: '/cliente' }, 
+                    { label: 'Dashboard', icon: <MdDashboard />, path: '/painel' }, 
+                    { label: 'Meus Clientes', icon: <RiGroupFill />, path: '/cliente' },
                     { label: 'Softwares', icon: <GrSystem />, path: '/softwares' } ,
                     { label: 'Sistemas', icon: <SiSystem76 />, path: '/sistemas' } 
                 ].map((menuItem, index) => (
@@ -33,7 +33,7 @@ const Sidebar = () => {
                             to={menuItem.path}
                             onClick={() => handleItemClick(index, menuItem.icon)}
                         >
-                            {menuItem.icon && menuItem.icon}
+                            {menuItem.icon && menuItem.icon} 
                             <span className="text">{menuItem.label}</span>
                         </Link>
                     </li>

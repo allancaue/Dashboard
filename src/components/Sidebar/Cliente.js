@@ -5,6 +5,8 @@ import { RiGroupFill } from "react-icons/ri";
 import { GrSystem } from "react-icons/gr";
 import { CiLogout } from "react-icons/ci";
 import Logo from '../../assets/logo.png'
+import { SiSystem76 } from "react-icons/si";
+
 
 const Sidebar = () => {
     const [activeItem, setActiveItem] = useState(1);
@@ -21,16 +23,17 @@ const Sidebar = () => {
             </a>
             <ul className="side-menu top">
                 {[
-                    { label: 'Dashboard', icon: <MdDashboard />, path: '/painel' }, // Rota para a página inicial
-                    { label: 'Meus Clientes', icon: <RiGroupFill />, path: '/cliente' }, // Rota para a página de clientes
-                    { label: 'Softwares', icon: <GrSystem />, path: '/softwares' } // Rota para a página de softwares
+                    { label: 'Dashboard', icon: <MdDashboard />, path: '/painel' }, 
+                    { label: 'Meus Clientes', icon: <RiGroupFill />, path: '/cliente' }, 
+                    { label: 'Softwares', icon: <GrSystem />, path: '/softwares' } ,
+                    { label: 'Sistemas', icon: <SiSystem76 />, path: '/sistemas' }
                 ].map((menuItem, index) => (
                     <li key={index} className={index === activeItem ? 'active' : ''}>
                         <Link
                             to={menuItem.path}
                             onClick={() => handleItemClick(index, menuItem.icon)}
                         >
-                            {menuItem.icon && menuItem.icon} {/* Renderiza o ícone se estiver disponível */}
+                            {menuItem.icon && menuItem.icon}
                             <span className="text">{menuItem.label}</span>
                         </Link>
                     </li>

@@ -4,7 +4,8 @@ import { MdDashboard } from "react-icons/md";
 import { RiGroupFill } from "react-icons/ri";
 import { GrSystem } from "react-icons/gr";
 import { CiLogout } from "react-icons/ci";
-import Logo from '../../assets/logo.png'
+import Logo from '../../assets/logo.png';
+import { SiSystem76 } from "react-icons/si";
 
 const Sidebar = () => {
     const [activeItem, setActiveItem] = useState(0);
@@ -23,7 +24,8 @@ const Sidebar = () => {
                 {[
                     { label: 'Dashboard', icon: <MdDashboard />, path: '/painel' }, 
                     { label: 'Meus Clientes', icon: <RiGroupFill />, path: '/cliente' }, 
-                    { label: 'Softwares', icon: <GrSystem />, path: '/softwares' } 
+                    { label: 'Softwares', icon: <GrSystem />, path: '/softwares' } ,
+                    { label: 'Sistemas', icon: <SiSystem76 />, path: '/sistemas' } 
                 ].map((menuItem, index) => (
                     <li key={index} className={index === activeItem ? 'active' : ''}>
                         <Link
