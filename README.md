@@ -76,7 +76,7 @@ Inicie o servidor
 
  - [API RECEITA WS](https://api-cnpj.onrender.com/)  ( mais informações em: [github.com/vidalxv/api-cnpj](https://github.com/vidalxv/api-cnpj) )
 
- - [API CLIENTES](https://api-ityw.onrender.com/)
+ - [API CLIENTES](https://api-ityw.onrender.com/) ( mais informações em: [github.com/vidalxv/api-clientes](https://github.com/vidalxv/api-clientes) )
 
 ---
 
