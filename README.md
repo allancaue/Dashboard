@@ -1,7 +1,7 @@
 
 # License Lab
 
-Sistema desenvolvido com o auxilio da professora **Thayane Santana** durante as aulas de Desenvolvimento Web com o intuito de gerenciar clientes e suas respectivas licenças.
+Sistema desenvolvido com o auxilio da professora **Thaiany Santana** durante as aulas de Desenvolvimento Web com o intuito de gerenciar clientes e suas respectivas licenças.
 
 
 ![Logo](https://github.com/allancaue/Dashboard/blob/main/src/assets/1.png?raw=true)
